@@ -1,0 +1,81 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background: linear-gradient(to bottom, #8e44ad, #f3e5f5);
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+  color: white;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+#lyric-section {
+  margin: 50px 0;
+}
+
+#lyric {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: white;
+  animation: fade-in 2s;
+}
+
+button {
+  background: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #4a148c;
+}
+
+/* Hidden sections */
+.hidden {
+  display: none;
+}
+
+.slideshow img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Keyframe Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
