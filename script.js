@@ -6,27 +6,30 @@ document.getElementById("explore-btn").addEventListener("click", function() {
 
 // Slideshow Functionality
 const images = [
-  { src: "placeholder1.jpg", caption: "Caption for the first memory." },
-  { src: "placeholder2.jpg", caption: "Caption for the second memory." },
-  { src: "placeholder3.jpg", caption: "Caption for the third memory." }
+  { src: 'images/kaliyahsc1.png', caption: 'cute moment on ft' },
+  { src: 'images/kaliyahsc2.png', caption: 'first ft' },
+  { src: 'imageskaliyahsc3.png', caption: 'cute moment of hoco dress' },
 ];
 
-let currentImage = 0;
+let currentIndex = 0;
+
+const slideshowImg = document.getElementById('slideshow-img');
+const caption = document.getElementById('caption');
+
+document.getElementById('prev-btn').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateSlideshow();
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateSlideshow();
+});
 
 function updateSlideshow() {
-  document.getElementById("slideshow-img").src = images[currentImage].src;
-  document.getElementById("caption").textContent = images[currentImage].caption;
+  slideshowImg.src = images[currentIndex].src;
+  caption.textContent = images[currentIndex].caption;
 }
-
-document.getElementById("prev-btn").addEventListener("click", function() {
-  currentImage = (currentImage - 1 + images.length) % images.length;
-  updateSlideshow();
-});
-
-document.getElementById("next-btn").addEventListener("click", function() {
-  currentImage = (currentImage + 1) % images.length;
-  updateSlideshow();
-});
 
 // Initialize slideshow
 updateSlideshow();
