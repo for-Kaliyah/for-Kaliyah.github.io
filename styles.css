@@ -130,3 +130,8 @@ blockquote {
   border-radius: 5px;
   margin: 20px 0;
 }
+
+#audio-section iframe {
+  max-width: 100%;
+  height: auto;
+}
