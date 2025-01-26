@@ -2,6 +2,9 @@
 document.getElementById("explore-btn").addEventListener("click", function() {
   document.getElementById("lyric-section").classList.add("hidden");
   document.getElementById("slideshow-section").classList.remove("hidden");
+  currentIndex = 0;
+  clickCount = 0;
+  updateSlideshow();
 });
 
 // Slideshow Functionality
@@ -12,6 +15,8 @@ const images = [
 ];
 
 let currentIndex = 0;
+let clickCount = 0;
+let totalClicks = 0; // Add total clicks counter
 
 const slideshowImg = document.getElementById('slideshow-img');
 const caption = document.getElementById('caption');
@@ -22,8 +27,15 @@ document.getElementById('prev-btn').addEventListener('click', () => {
 });
 
 document.getElementById('next-btn').addEventListener('click', () => {
+  totalClicks++; // Increment total clicks
   currentIndex = (currentIndex + 1) % images.length;
   updateSlideshow();
+  
+  // Show message section after viewing all images plus 3 more clicks
+  if (totalClicks >= images.length + 3) {
+    document.getElementById("slideshow-section").classList.add("hidden");
+    document.getElementById("message-section").classList.remove("hidden");
+  }
 });
 
 function updateSlideshow() {
@@ -33,11 +45,3 @@ function updateSlideshow() {
 
 // Initialize slideshow
 updateSlideshow();
-
-// Show the final message
-document.getElementById("next-btn").addEventListener("click", function() {
-  if (currentImage === 0) {
-    document.getElementById("slideshow-section").classList.add("hidden");
-    document.getElementById("message-section").classList.remove("hidden");
-  }
-});
