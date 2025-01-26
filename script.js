@@ -8,7 +8,7 @@ document.getElementById("explore-btn").addEventListener("click", function() {
 const images = [
   { src: 'images/kaliyahsc1.png', caption: 'cute moment on ft' },
   { src: 'images/kaliyahsc2.png', caption: 'first ft' },
-  { src: 'imageskaliyahsc3.png', caption: 'cute moment of hoco dress' },
+  { src: 'images/kaliyahsc3.png', caption: 'cute moment of hoco dress' },
 ];
 
 let currentIndex = 0;
