@@ -31,10 +31,11 @@ document.getElementById('next-btn').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % images.length;
   updateSlideshow();
   
-  // Show message section after viewing all images plus 3 more clicks
-  if (totalClicks >= images.length + 3) {
+  // Show message section after 3 clicks
+  if (totalClicks >= 3) {
     document.getElementById("slideshow-section").classList.add("hidden");
     document.getElementById("message-section").classList.remove("hidden");
+    document.getElementById("reasons-btn").classList.remove("hidden"); // Show the reasons button
   }
 });
 
@@ -45,3 +46,15 @@ function updateSlideshow() {
 
 // Initialize slideshow
 updateSlideshow();
+
+document.getElementById('message-section').addEventListener('click', function() {
+  document.getElementById('message-section').classList.add('hidden');
+  document.getElementById('reasons-section').classList.remove('hidden');
+});
+
+// Add event listener for the reasons button
+document.getElementById("reasons-btn").addEventListener("click", function() {
+  document.getElementById("message-section").classList.add("hidden");
+  document.getElementById("reasons-section").classList.remove("hidden");
+  document.getElementById("letter-section").classList.remove("hidden"); // Show the letter section
+});
